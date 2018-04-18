@@ -36,7 +36,7 @@ router.post('/admin/login', function(req, res, next) {
   else 
   {
       User.findOne({where:{ username: req.body.username, password:password }})
-      .then(function(user) {
+      	.then(function(user) {
       // if (err) throw err;
 	      console.log('ini adalah'+user.admin);
 	      if (user.admin >0 ){
@@ -51,7 +51,7 @@ router.post('/admin/login', function(req, res, next) {
 	          // req.flash('info', 'Sepertinya akun Anda salah!');
 	          res.redirect('/admin/login');
 	      }
-    });
+    	})
   } 
 });
 

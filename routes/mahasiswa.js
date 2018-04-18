@@ -33,7 +33,8 @@ router.get('/', function(req, res, next) {
 	    	r_piagam:results[1],
 	    	r_penghasilan:results[2],
 	    	r_jabatan:results[3],
-	    	r_kedisiplinan:results[4],	    		    		    	
+	    	r_kedisiplinan:results[4],
+	    	layout:'layout_mhs'   		    		    	
 	    });
 	  });
 });
