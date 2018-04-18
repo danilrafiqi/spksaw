@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    {{> head }}
+  </head>
+  <body class="hold-transition fixed skin-blue sidebar-mini">
+    <div class="wrapper">
+      {{> nav }}
+      {{> sidebar }}
+      <div class="content-wrapper">
+      {{{body}}}
+      </div>
+      {{> footer }}
+      <div class="control-sidebar-bg"></div>
+    </div>
+    {{> js }}
+  </body>
+</html>

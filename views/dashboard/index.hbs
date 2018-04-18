@@ -1,0 +1,269 @@
+<section class="content-header">
+      <h1>
+        Dashboard
+        <small>Admin</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+<section class="content">
+	<div class="row">
+	    <div class="col-md-4 col-sm-6 col-xs-12">
+	      <div class="info-box">
+	        <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+
+	        <div class="info-box-content">
+	          <span class="info-box-text">Jumlah Pendaftar</span>
+	          {{#each jumlah}}
+	          <span class="info-box-number">{{jumlah}}</span>
+	          {{/each}}
+	        </div>
+	        <!-- /.info-box-content -->
+	      </div>
+	      <!-- /.info-box -->
+	    </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="ion ion-android-done"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Sudah Mengisi</span>
+              {{#each jumlah_pilih}}
+              <span class="info-box-number">{{jumlah}}</span>
+              {{/each}}
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+	        <!-- /.col -->
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-red"><i class="ion ion-android-close"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Belum Mengisi</span>
+              {{#each jumlah_belum}}
+              <span class="info-box-number">{{jumlah}}</span>
+              {{/each}}
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+
+
+    <div class="col-md-6">
+      <!-- AREA CHART -->
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Range IPK Pendaftar</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+          </div>
+        </div>
+        <div class="box-body">
+          <div class="chart">
+            <canvas id="ipk" style="height:250px"></canvas>
+          </div>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+
+      <!-- DONUT CHART -->
+      <div class="box box-danger">
+        <div class="box-header with-border">
+          <h3 class="box-title">Pendaftar Per Semester</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+          </div>
+        </div>
+        <div class="box-body">
+          <canvas id="semester" style="height:300px"></canvas>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+    </div>
+    <!-- /.col (LEFT) -->
+    <div class="col-md-6">
+      <!-- LINE CHART -->
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">Pendaftar Per Program Studi</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+          </div>
+        </div>
+        <div class="box-body">
+          <div class="chart">
+            <canvas id="mhsprodi" style="height:600px"></canvas>
+          </div>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+
+      <!-- BAR CHART -->
+      <!-- /.box -->
+    </div>        
+	        <!-- /.col -->
+
+	        <!-- fix for small devices only -->
+	        <div class="clearfix visible-sm-block"></div>
+
+
+	        <!-- /.col -->
+	        <!-- /.col -->
+	      </div>
+	</div>
+</section>
+
+
+
+<script src="/adminlte/plugins/chartjs/Chart.js"></script>
+<!-- FastClick -->
+<script src="/adminlte/plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<!-- AdminLTE for demo purposes -->
+<script src="/adminlte/dist/js/demo.js"></script>
+
+
+<script >
+//bar mahasiswa
+var mhsl = [{{#each by_prodi}}{{jumlah}},{{/each}}];
+var prodi = [{{#each by_prodi}}'{{prodi}}',{{/each}}];
+var nilaimaks = Math.max({{#each mhsl}}{{jumlah}},{{/each}});
+
+var ctx = document.getElementById("mhsprodi");
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: prodi,
+        datasets: [{
+            label: 'Mahasiswa',
+            backgroundColor:'rgba(54, 162, 235, 0.2)',
+            data: mhsl,  
+            //data: [12, 19, 3, 5, 2, 3, 4],  
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+                }
+            }]
+        },
+    }
+});
+
+</script>
+
+<script>
+var mhs_ipk = [{{#each by_ipk}}{{jumlah}},{{/each}}];
+// var prodi = [{{#each by_ipk}}'{{prodi}}',{{/each}}];
+
+new Chart(document.getElementById("ipk"), {
+    type: 'doughnut',
+    data: {
+      labels: ["3-3.20", "3.21-3.40", "3.41-3.60", "3.61-3.80", "3.81-4"],
+      datasets: [
+        {
+          label: "Per IPK",
+			backgroundColor: [
+			"#3c8dbc",
+			"#00c0ef",
+			"#00a65a",
+			"#f39c12",
+			"#f56954",
+			"#d2d6de",
+			"#001F3F",
+			"#39CCCC",
+			"#605ca8",
+			"#ff851b",
+			"#D81B60",
+			"#111111"
+			],
+          data: mhs_ipk
+        }
+      ]
+    },
+    options: {
+	    title: {
+	    	display: true,
+	        text: 'Range IPK Pendaftar'
+	    },
+
+	    responsive: true,
+	    legend: {
+	      position: 'right',
+	    },
+	    animation: {
+	      animateScale: true,
+	      animateRotate: true
+	    }
+    }
+});
+</script>
+
+
+<script>
+var mhs_semester = [{{#each by_semester}}{{jumlah}},{{/each}}];
+var t_semester = [{{#each by_semester}}'{{semester}}',{{/each}}];
+
+new Chart(document.getElementById("semester"), {
+    type: 'horizontalBar',
+    data: {
+      labels: t_semester,
+      datasets: [
+        {
+          label: "Pendaftar Per Semester",
+			backgroundColor: [
+			"#3c8dbc",
+			"#00c0ef",
+			"#00a65a",
+			"#f39c12",
+			"#f56954",
+			"#d2d6de",
+			"#001F3F",
+			"#39CCCC",
+			"#605ca8",
+			"#ff851b",
+			"#D81B60",
+			"#111111"
+			],
+          data: mhs_semester,
+        }
+      ]
+    },
+    options: {
+
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Pendaftar Berdasarkan Semester'
+      },
+        scales: {
+            xAxes: [{
+                ticks: {
+                    beginAtZero:true,
+                }
+            }]
+        },
+    }
+});
+
+
+</script>

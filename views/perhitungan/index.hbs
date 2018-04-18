@@ -1,0 +1,164 @@
+<section class="content-header">
+<h1>Perhitungan<small> Rank</small></h1>
+  <ol class="breadcrumb">
+    <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>        
+    <li class="active">Perhitungan Rank</li>
+  </ol>
+</section>
+<!-- Main content-->
+<section class="content">
+  <!-- Your Page Content Here-->
+  <!-- /.row-->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Hasil Analisa</div>
+        <div class="panel-body">
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>NPM</th>
+              <th>IPK</th>
+              <th>Jumlah Piagam</th>
+              <th>Penghasilan Orang Tua</th>
+              <th>Jabatan</th>
+              <th>Nilai Kedisiplinan</th>
+            </tr>   
+            </thead>
+            <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>             
+              <td></td> 
+            </tr>
+            {{#each nilaiawal}}
+            <tr>
+              <td>{{npm}}</td>
+              <td>{{n_ipk}}</td>
+              <td>{{n_piagam}}</td>
+              <td>{{n_penghasilan}}</td>
+              <td>{{n_jabatan}}</td>
+              <td>{{n_kedisiplinan}}</td>
+            </tr>
+            {{/each}}
+            </tbody>
+            <tfoot>
+            <tr>
+              <th>NPM</th>
+              <th>IPK</th>
+              <th>Jumlah Piagam</th>
+              <th>Penghasilan Orang Tua</th>
+              <th>Jabatan</th>
+              <th>Nilai Kedisiplinan</th>
+            </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">Normalisasi</div>
+        <div class="panel-body">
+              <table id="example2" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>NPM</th>
+                  <th>IPK</th>
+                  <th>Jumlah Piagam</th>
+                  <th>Penghasilan Orang Tua</th>
+                  <th>Jabatan</th>
+                  <th>Nilai Kedisiplinan</th>
+                </tr>   
+                </thead>
+                <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>             
+                  <td></td> 
+                </tr>
+                {{#each nilai}}
+                <tr>
+                  <td>{{npm}}</td>
+                  <td>{{IPK}}</td>
+                  <td>{{Piagam}}</td>
+                  <td>{{Penghasilan}}</td>
+                  <td>{{Jabatan}}</td>
+                  <td>{{Kedisiplinan}}</td>
+                </tr>
+                {{/each}} 
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>NPM</th>
+                  <th>IPK</th>
+                  <th>Jumlah Piagam</th>
+                  <th>Penghasilan Orang Tua</th>
+                  <th>Jabatan</th>
+                  <th>Nilai Kedisiplinan</th>
+                </tr>
+                </tfoot>
+              </table>
+        </div>
+      </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">Rangking</div>
+        <div class="panel-body">
+          <table id="example3" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>NPM</th>
+              <th>IPK</th>
+              <th>Jumlah Piagam</th>
+              <th>Penghasilan Orang Tua</th>
+              <th>Jabatan</th>
+              <th>Nilai Kedisiplinan</th>
+              <th>Total Nilai</th>
+            </tr>   
+            </thead>
+            <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>             
+              <td></td> 
+            </tr>
+            {{#each rank}}
+            <tr>
+              <td>{{npm}}</td>
+              <td>{{IPK}}</td>
+              <td>{{Piagam}}</td>
+              <td>{{Penghasilan}}</td>
+              <td>{{Jabatan}}</td>
+              <td>{{Kedisiplinan}}</td>
+              <td>{{nilai_akhir}}</td>
+            </tr>
+            {{/each}}
+            </tbody>
+            <tfoot>
+            <tr>
+              <th>NPM</th>
+              <th>IPK</th>
+              <th>Jumlah Piagam</th>
+              <th>Penghasilan Orang Tua</th>
+              <th>Jabatan</th>
+              <th>Nilai Kedisiplinan</th>
+              <th>Total Nilai</th>              
+            </tr>
+            </tfoot>
+          </table>        
+        </div>        
+      </div>
+      <!-- /.box-->
+    </div>
+  </div>
+</section>

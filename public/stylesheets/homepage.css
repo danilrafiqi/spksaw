@@ -1,0 +1,39 @@
+.navbar-item {
+	background: #2c3e50!important;
+}
+.putih{
+	color: white;
+}
+.ijo{
+	background: #18bc9c;
+}
+
+.loginku{
+    background: #2e9682;
+    color: #fff;
+    padding: 20px;
+    border-top: 0;
+}
+.login-logo.putih a {
+    color: white;
+}
+
+.panduan ol li {
+    font-size: 22px;
+}
+.panduan{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.ukuran{
+	max-width: 300px
+}
+
+li.list-group-item.ijo {
+    background: #2e9682;
+    border: none;
+    color: white;
+}
+span.badge {
+    background: white;
+    color: black;
+}

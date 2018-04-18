@@ -1,0 +1,66 @@
+<section class="content-header">
+<h1>Nilai<small> Alternatif</small></h1>
+  <ol class="breadcrumb">
+    <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>        
+    <li class="active">Nilai Alternatif</li>
+  </ol>
+</section>
+<!-- Main content-->
+<section class="content">
+  <!-- Your Page Content Here-->
+  <!-- /.row-->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box">
+
+        <!-- /.box-header -->
+        <div class="box-body">
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>NPM</th>
+              <th>IPK</th>
+              <th>Jumlah Piagam</th>
+              <th>Penghasilan Orang Tua</th>
+              <th>Jabatan</th>
+              <th>Nilai Kedisiplinan</th>
+            </tr>   
+            </thead>
+            <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>             
+              <td></td> 
+            </tr>
+            {{#each nilai}}
+            <tr>
+              <td>{{npm}}</td>
+              <td>{{IPK}}</td>
+              <td>{{'Jumlah Piagam'}}</td>
+              <td>{{'Penghasilan Orang Tua'}}</td>
+              <td>{{'Jabatan dalam Organisasi'}}</td>
+              <td>{{'Nilai Kedisiplinan'}}</td>
+            </tr>
+            {{/each}} 
+            </tbody>
+            <tfoot>
+            <tr>
+              <th>NPM</th>
+              <th>IPK</th>
+              <th>Jumlah Piagam</th>
+              <th>Penghasilan Orang Tua</th>
+              <th>Jabatan</th>
+              <th>Nilai Kedisiplinan</th>
+            </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box-->
+    </div>
+  </div>
+</section>

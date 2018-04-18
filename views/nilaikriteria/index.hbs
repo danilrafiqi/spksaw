@@ -1,0 +1,81 @@
+<section class="content-header">
+<h1>Nilai<small> Kriteria</small></h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>        
+    <li class="active">Nilai Kriteria</li>
+  </ol>
+</section>
+<!-- Main content-->
+<section class="content">
+  <!-- Your Page Content Here-->
+  <!-- /.row-->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box">
+        <div class="box-header">
+          <form action="/detailkriteria/" class="form-inline" method="">
+            <select class="form-control" id="" name="atribut" onchange="window.location.href='/nilaikriteria/detail/'+this.value">
+              <option value="">Pilih</option>
+              {{#each kriteria}}            
+                <option value="{{idKriteria}}">{{namaKriteria}}</option>
+              {{/each}}
+            </select>
+          </form>
+          <div class="box-tools ">
+            <a href="/nilaikriteria/add" class="btn btn-sm btn-info">
+              Tambah Kriteria
+            </a>
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <table id="example" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama Kriteria</th>
+              <th>Keterangan</th>
+              <th>Nilai</th>
+              <th>Aksi</th>
+            </tr>   
+            </thead>
+            <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>              
+            </tr>
+            {{#each nilaikriteria}}
+            <tr>
+              <td>{{idNilaiKriteria}}</td>
+              <td>{{namaKriteria}}</td>
+              <td>{{keterangan}}</td>
+              <td>{{nilai}}</td>
+              <td>
+                <a href="/nilaikriteria/edit/{{idNilaiKriteria}}" class='btn btn-info'><i class="fa fa-pencil"></i></a>
+                <form action="/nilaikriteria/delete/{{idNilaiKriteria}}?_method=DELETE" method="POST" style="display:inline">
+                  <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                </form>
+              </td>
+            </tr>
+            {{/each}} 
+            </tbody>
+            <tfoot>
+            <tr>
+              <th>Kode</th>
+              <th>Nama</th>
+              <th>Atribut</th>
+              <th>Bobot</th>
+              <th>Aksi</th>
+            </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box-->
+    </div>
+  </div>
+</section>

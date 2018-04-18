@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Saw Beasiswa</title>
+<link rel="stylesheet" href="/stylesheets/homepage.css"/>
+<link rel="stylesheet" href="/adminlte/bootstrap/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="/adminlte/dist/css/AdminLTE.min.css"/>
+<link rel="stylesheet" href="/adminlte/dist/css/skins/skin-blue.min.css"/>
+<link rel="stylesheet" type="text/css" href="/adminlte/plugins/datatables/dataTables.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/adminlte/plugins/ionicons/css/ionicons.css">
+  <link rel="stylesheet" href="/adminlte/plugins/iCheck/square/blue.css">
+</head>
+<body class="ijo">
+<nav class="navbar navbar-item">
+  <div class="container">
+    <div class="navbar-header">  
+      <a class="navbar-brand putih" href="/">
+        Saw Beasiswa
+      </a>
+    </div>
+  </div>
+</nav>  
+<div class="container">
+  <div id="row" class="row">
+    <div class="col-md-4 col-sm-6">
+      <img id="" src="/images/polinela.png" class="img-responsive ukuran" width="" alt="SAW Beasiswa">
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="login-box">
+        <div class="login-logo putih" >
+          <b>Panduan </b>Mahasiswa
+        </div>
+  <ul class="list-group">
+    <li class="list-group-item ijo">Buat Akun => <a href="/signup" class="btn btn-info">Daftar</a><span class="badge">1</span></li>
+    <li class="list-group-item ijo">Login menggunakan Akun yang dibuat<span class="badge">2</span></li>
+    <li class="list-group-item ijo">Isi data data melalui form yang telah disediakan<span class="badge">3</span></li>
+    <li class="list-group-item ijo">Verifikasi berkas ke akademik<span class="badge">4</span></li>
+    <li class="list-group-item ijo">Tunggu pengumuman<span class="badge">5</span></li>
+  </ul>   
+      </div>  
+
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <div class="login-box">
+        <div class="login-logo putih" >
+          <a href="/"><b>Login</b>Mahasiswa</a>
+        </div>      
+        <div class="loginku">
+          <p class="login-box-msg">Login untuk mendaftar beasiswa</p>
+
+          <form action="/signin" method="post">
+            <div class="form-group has-feedback">
+              <input type="text" class="form-control" placeholder="NPM" name="npm">
+              <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+              <input type="password" class="form-control" placeholder="Password" name="password">
+              <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+              <div class="col-xs-8">
+                <div class="checkbox icheck">
+                  <label>
+                    <input type="checkbox"> Remember Me
+                  </label>
+                </div>
+              </div>
+              <!-- /.col -->
+              <div class="col-xs-4">
+                <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+              </div>
+              <!-- /.col -->
+            </div>
+          </form>
+          <a href="/signup" class="text-center putih">Buat Akun</a>
+
+        </div>      
+      </div>  
+    </div>
+  </div>
+</div>
+
+<nav class="navbar  navbar-fixed-bottom navbar-item">
+  <div class="container">
+      <p class="navbar-text putih">Copyright &copy; 2018 SAW - Beasiswa </p>
+      <p class="navbar-text navbar-right putih">
+      Code by <a href="https://rafibanget.blogspot.com" class="">Danilrafiqi</a>
+      </p>
+  </div>
+</nav>
+
+<script src="/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="/adminlte/bootstrap/js/bootstrap.min.js"></script>
+<script src="/adminlte/dist/js/app.min.js"></script>
+<script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="/adminlte/plugins/slimScroll/jquery.slimscroll.js"></script>
+
+<script src="/adminlte/plugins/iCheck/icheck.min.js"></script>
+<script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' // optional
+    });
+  });
+</script>
+
+</body>
+</html>
